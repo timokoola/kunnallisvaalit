@@ -1,0 +1,3 @@
+get following file, unzip it, and place it in this directory:
+
+http://192.49.229.37/K2012/data/k-2012_maa.xml.zip
