@@ -14,7 +14,7 @@ if __name__ == "__main__":
     for line in f2:
         res = line.split(";")
         key = res[0].lower().strip() +" "+ res[2].lower().strip() +" "+ res[3].lower().strip()
-        key = unicode(key.decode("ISO-8859-1", errors="strict"))
+        key = unicode(key.decode("utf-8", errors="strict"))
         values[key] = res
     f2.close()
 
@@ -36,6 +36,9 @@ if __name__ == "__main__":
             elem.attrib["values-liberal-conservative"] = values[key][4].strip().replace(",",".")
             elem.attrib["values-right-left"] = values[key][5].strip().replace(",",".")
             elem.attrib["values-green"] = values[key][6].strip().replace(",",".")
+            elem.attrib["values-found"] = "yes" 
+        else:
+            print "no " + key
     tree.write("raaka-datat/edited_kv.xml")
 
     print touched
